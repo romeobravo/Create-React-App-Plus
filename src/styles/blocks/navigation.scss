@@ -1,0 +1,16 @@
+@import 'variables';
+
+.navigation {
+  &__link {
+    display: inline-flex;
+    color: $white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: $gutter-large;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}

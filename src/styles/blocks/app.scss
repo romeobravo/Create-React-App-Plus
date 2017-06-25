@@ -1,0 +1,11 @@
+@import 'variables';
+
+.app {
+  text-align: center;
+  min-height: 100%;
+
+  &__main {
+    padding-top: $gutter-large;
+    line-height: 1.41;
+  }
+}

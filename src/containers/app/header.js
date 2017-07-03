@@ -1,5 +1,5 @@
 import React from 'react'
-import cx from 'bem-classes'
+import bem from 'bem-classes'
 
 import logo from 'images/logo.svg'
 import 'styles/blocks/header.css'
@@ -7,13 +7,13 @@ import 'styles/blocks/header.css'
 import Navigation from './navigation'
 
 const Header = () => {
-  const header = cx('header')
+  const header = bem('header')
 
   return (
     <header className={header}>
-      <h1 className={header.e('title')}>Create React App Plus</h1>
-      <img src={logo} className={header.e('logo')} alt="logo" />
-      <Navigation className={header.e('navigation').s} />
+      <h1 className={header('title')}>Create React App Plus</h1>
+      <img src={logo} className={header('logo')} alt="logo" />
+      <Navigation className={header('navigation').toString()} />
     </header>
   )
 }

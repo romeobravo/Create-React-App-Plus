@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cx from 'bem-classes'
+import bem from 'bem-classes'
 import 'styles/blocks/button.css'
 
 const Button = (props) => {
   const { className, onClick, block } = props
-  const button = cx('button', { $block: block }, className)
+  const button = bem('button', { $block: block }, className)
   return (
     <button onClick={onClick} className={button}>{ props.children }</button>
   )

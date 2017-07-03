@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "dependencies": {
-    "bem-classes": "^1.1.1",
+    "bem-classes": "^2.0.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-import-resolver-node": "^0.3.1",
     "history": "^4.6.3",
@@ -15,7 +15,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
-    "redux": "^3.7.0",
+    "redux": "^3.7.1",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {

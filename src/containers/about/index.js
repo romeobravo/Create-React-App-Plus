@@ -1,15 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'react-apollo'
-
-import MatchListQuery from 'api/MatchListQuery'
+import { compose, graphql } from 'react-apollo'
+import { Posts } from 'api/queries'
 
 class About extends React.PureComponent {
   static propTypes = {
     data: PropTypes.shape({
       loading: PropTypes.bool,
       error: PropTypes.object,
-      matches: PropTypes.array,
+      posts: PropTypes.array,
     }),
   }
 
@@ -17,21 +16,30 @@ class About extends React.PureComponent {
     data: {
       loading: false,
       error: '',
-      matches: [],
+      posts: [],
     },
   }
 
   render() {
-    const { loading, error } = this.props.data
+    const { loading, error, posts } = this.props.data
+    if (loading) {
+      return <div>Loading: { loading }</div>
+    }
+
+    if (error) {
+      return <div>{ error }</div>
+    }
+
     return (
       <div>
         <h1>About Us</h1>
 
-        { loading && error}
+        { posts && posts.map(post => <div key={post.id}>{post.title} {post.votes}</div>) }
       </div>
     )
   }
 }
 
-const AboutWithData = graphql(MatchListQuery)(About)
-export default AboutWithData
+export default compose(
+  graphql(Posts),
+)(About)

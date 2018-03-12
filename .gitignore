@@ -19,3 +19,7 @@ yarn-error.log*
 
 # Generated CSS
 /src/**/*.css
+
+# Ctags
+t
+tags
